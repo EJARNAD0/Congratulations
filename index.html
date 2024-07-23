@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="image-box">
+        <div class="container">
+            <div class="gift-card animated zoomIn">
+                <h1 class="animated fadeInDown">Congratulations on Your Psychology Pinning Ceremony!</h1>
+                <p class="animated fadeInUp delay-1s">We are so proud of your achievements and wish you the best for your future endeavors.</p>
+                <button id="flowerButton" class="animated bounceIn delay-2s">Click the gift!</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add the audio element without controls and set to autoplay -->
+    <audio id="audioPlayer" autoplay loop>
+        <source src="Congratulations.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- JavaScript to open flower page -->
+    <script>
+        const flowerButton = document.getElementById('flowerButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Ensure the audio starts playing automatically
+        audioPlayer.play().catch(e => console.error('Audio play error:', e));
+
+        flowerButton.addEventListener('click', () => {
+            window.location.href = 'flower.html'; // Open flower bouquet page
+        });
+    </script>
+</body>
+</html>

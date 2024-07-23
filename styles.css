@@ -1,0 +1,198 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
+
+    /* Glass effect */
+    background-color: rgba(232, 20, 20, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+}
+
+.image-box {
+    width: 90%; /* Adjusted for better mobile view */
+    max-width: 600px;
+    height: auto; /* Allow height to adjust based on content */
+    background: url('images/Cover.jpg') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #d0d0d0;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px #aaa, -4px -4px 10px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px; /* Added padding for better spacing */
+    box-sizing: border-box; /* Ensures padding is included in the width and height */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Allow height to adjust based on content */
+    width: 100%; /* Full width of the parent */
+    position: relative;
+}
+
+.gift-card {
+    background: linear-gradient(145deg, #ffffff, #e2e2e2);
+    border: 2px solid #d0d0d0;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px #aaa, -4px -4px 10px #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%; /* Full width of the container */
+    max-width: 300px; /* Maximum width for larger screens */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+h1 {
+    font-size: 1.5em; /* Adjusted for better readability on small screens */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em; /* Adjusted for better readability on small screens */
+    margin: 0;
+}
+
+button {
+    margin-top: 15px; /* Adjusted for better spacing on small screens */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(235, 70, 70, 0.2);
+    color: rgb(211, 73, 73);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d67070;
+}
+
+/* Animation styles */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+}
+
+.zoomIn {
+    animation-name: zoomIn;
+}
+
+.delay-1s {
+    animation-delay: 1s;
+}
+
+.delay-2s {
+    animation-delay: 2s;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .gift-card {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove maximum width for better responsiveness */
+    }
+
+    h1 {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+
+    p {
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+}

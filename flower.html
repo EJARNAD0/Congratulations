@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Bouquet</title>
+    <link rel="stylesheet" href="flower.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="bouquet-container">
+        <h1 class="animated fadeInDown">Here's a Beautiful Flower Bouquet for You!</h1>
+        <div class="bouquet">
+            <!-- Example flower images, add your own or more for variety -->
+            <div class="flower-container">
+                <img src="images/flower1.jpg" alt="Flower 1" class="flower animated bloomIn">
+            </div>
+            <div class="flower-container">
+                <img src="images/flower2.jpg" alt="Flower 2" class="flower animated bloomIn delay-1s">
+            </div>
+            <div class="flower-container">
+                <img src="images/flower3.jpg" class="flower animated bloomIn delay-2s">
+            </div>
+        </div>
+        <button id="playMusicButton">Play Music</button>
+        <button id="backButton">Back to Congratulations</button>
+    </div>
+
+    <!-- Add the audio element for background music -->
+    <audio id="backgroundMusic" loop>
+        <source src="Congratulations.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const playMusicButton = document.getElementById('playMusicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        playMusicButton.addEventListener('click', () => {
+            backgroundMusic.play();
+            playMusicButton.style.display = 'none'; // Hide the button after playing
+            // Trigger confetti effect
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+
+        // Optional: control the volume of the background music
+        backgroundMusic.volume = 0.5; // Adjust volume from 0 to 1
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'index.html'; // Go back to the main page
+        });
+
+        // Optional: Log errors to the console if the audio fails to load
+        backgroundMusic.addEventListener('error', (e) => {
+            console.error('Error loading audio:', e);
+        });
+    </script>
+</body>
+</html>
